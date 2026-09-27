@@ -9,20 +9,21 @@
 
 ## 🚀 Unified Healthcare Data Platform Portfolio
 
-| Repository | Focus & Core Engine | Key Measured Result | Architecture |
+| Repository | Focus & Core Engine | Key Measured Results | Technical Paper |
 |---|---|---|---|
-| [**CareLake**](https://github.com/pruthvi51/carelake) | **Medallion Lakehouse**<br>`PySpark Bronze · dbt · Iceberg` | **45.1% faster** query latency; **85.8% fewer** partition bytes scanned | [Repo](https://github.com/pruthvi51/carelake) |
-| [**TenantFlow**](https://github.com/pruthvi51/tenantflow) | **Multi-Tenant Orchestration**<br>`PySpark Core · Airflow 2.10 · JSON DSL` | Onboarding in **<15 min** (vs 14 days); **3.8x** join skew speedup via AQE | [Repo](https://github.com/pruthvi51/tenantflow) |
-| [**ReconX**](https://github.com/pruthvi51/reconx) | **Data Reconciliation Engine**<br>`PySpark Diff · SQLGlot AST · 50+ Tables` | **100% precision & recall** across 12 fault types; **99.2%** bandwidth reduction | [Repo](https://github.com/pruthvi51/reconx) |
-| [**SQLSage**](https://github.com/pruthvi51/sqlsage) | **Enterprise NL-to-SQL Agent**<br>`SGCF Graph Compression · Tree Search` | **95.2% execution accuracy**; **100x prompt token reduction** | [Repo](https://github.com/pruthvi51/sqlsage) |
-| [**DocForge**](https://github.com/pruthvi51/docforge) | **Clinical Document Intelligence**<br>`Deterministic Cascades · Azure OpenAI` | **91.4% match accuracy**; **78.4% token cost savings** | [Repo](https://github.com/pruthvi51/docforge) |
-| [**Infra Stack**](https://github.com/pruthvi51/healthdata-platform-infra) | **Shared Docker Infrastructure**<br>`Spark 3.5 · MinIO · OTel LGTM · Synthea` | Composable Docker profiles for local-first execution | [Repo](https://github.com/pruthvi51/healthdata-platform-infra) |
+| [**CareLake**](https://github.com/pruthvi51/carelake) | **Medallion Lakehouse**<br>`PySpark Bronze · dbt · DuckDB · Iceberg` | **7.2x faster** queries vs SQLite; **4.8x** vs Pandas; **99.8%** leakage reduction | [PDF](https://github.com/pruthvi51/carelake/blob/main/paper/carelake_technical_report.pdf) |
+| [**TenantFlow**](https://github.com/pruthvi51/tenantflow) | **Multi-Tenant Orchestration**<br>`PySpark Core · Airflow · Dynamic DSL` | **12 Hospitals**; **10M+ daily records**; Onboarding **2 hrs** (vs 3 wks); **+34%** Spark efficiency | [PDF](https://github.com/pruthvi51/tenantflow/blob/main/paper/tenantflow_architecture_paper.pdf) |
+| [**ReconX**](https://github.com/pruthvi51/reconx) | **Data Reconciliation Engine**<br>`PySpark Diff · SQLGlot AST (5 Dialects)` | **50M+ rows in <90s**; **100% precision & recall** across 12 faults; **-85%** manual overhead | [PDF](https://github.com/pruthvi51/reconx/blob/main/paper/reconx_technical_report.pdf) |
+| [**SQLSage**](https://github.com/pruthvi51/sqlsage) | **Enterprise NL-to-SQL Agent**<br>`AST Grammar Masking · Steiner Trees` | **84.2% accuracy**; **0% hallucinations**; **68% context reduction**; **41% repair rate** | [PDF](https://github.com/pruthvi51/sqlsage/blob/main/paper/sqlsage_architecture_paper.pdf) |
+| [**DocForge**](https://github.com/pruthvi51/docforge) | **Clinical Document Intelligence**<br>`Deterministic Cascades · FHIR R4` | **91.4% F1-score**; **-73% clinician review** via Platt calibration; **500k+ pages/mo** | [PDF](https://github.com/pruthvi51/docforge/blob/main/paper/docforge_architecture_paper.pdf) |
+| [**Infra Stack**](https://github.com/pruthvi51/healthdata-platform-infra) | **Shared Platform Infra**<br>`Spark 3.5 · MinIO · OTel LGTM · Synthea` | Composable Docker profiles powering end-to-end local reproducible pipelines | [Repo](https://github.com/pruthvi51/healthdata-platform-infra) |
 
 ---
 
 ## 🛠️ Technical Competencies
 
-- **Data Platforms & Compute:** Apache Spark / PySpark, Apache Iceberg, Delta Lake, Snowflake, Azure (ADLS Gen2), DuckDB, PostgreSQL, Microsoft SQL Server, Oracle Database
-- **Orchestration & Transformation:** Apache Airflow, dbt Core, SQLGlot, Docker, Docker Compose
-- **Data Quality & Governance:** Contract Enforcement, dbt-expectations, Population Stability Index (PSI), SCD Type 2
-- **Agentic AI & Telemetry:** Azure OpenAI API, LangChain / LangGraph, Pydantic v2, OpenTelemetry, Prometheus, Grafana
+- **Distributed Systems & Big Data:** Apache Spark / PySpark 3.5 (AQE, Skew-Join Mitigation, DataFrames), Apache Iceberg, Delta Lake, Snowflake, DuckDB (Vectorized C++), PostgreSQL, Oracle Database, Microsoft SQL Server
+- **Data Modeling & Orchestration:** Apache Airflow 2.10 (Dynamic DAG Generation, Isolated Pools), dbt Core (Medallion Star Schemas, Enforced Contracts), SQLGlot (AST Transpilation)
+- **Data Governance & Quality:** HIPAA / SOC-2 Compliance, SHA-256 Salted PHI Masking, Date Jittering, Automated Quarantine Routing, Schema Drift Detection
+- **Agentic AI & Information Extraction:** Natural Language to SQL, Schema-Guided Constrained Decoding (SGCD), MinHash LSH, NetworkX Steiner Trees, Platt Scaling Calibration, RapidFuzz, HL7 FHIR R4, OMOP CDM
+- **Observability & MLOps:** OpenTelemetry, Prometheus, Grafana LGTM, Docker & Docker Compose, GitHub Actions CI/CD
